@@ -1,0 +1,27 @@
+.css{
+    color: blueviolet;
+}
+.box {
+    background-color: gray;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .box:nth-child(2) {
+    flex:1;
+    margin:0px 12px 10px;
+}
+
+.box-active {
+    background-color: green;
+    color: white;
+}
+
+.input--active{
+    background: yellow;
+}
