@@ -1,0 +1,23 @@
+.product {
+
+    &__list {
+        display: flex;
+        flex-flow: wrap;
+        margin-top: 20px;
+    }
+
+    &__item {
+        width: 50%;
+        margin-bottom: 40px;
+        margin-right: 20px;
+        border: 1px solid #ccc;
+    }
+
+    &__image img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
