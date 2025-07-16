@@ -1,35 +1,21 @@
 import React, { useEffect, useState } from 'react'
+import ProductList from './ProductList'
+import CreateProduct from './CreateProduct'
 
 const Product = () => {
 
-    const [data, setData] = useState([]);
+    const [reload, setReload] = useState(false);
 
-    useEffect(() => {
-        const fetchApi = () => {
-            fetch('http://localhost:3002/products')
-            .then((res) => res.json())
-            .then((data) => {
-                setData(data)
-            })
-        }
-        fetchApi()
-    }, [])
-    
-    console.log(data)
+    const handleReload = () => {
+        setReload(!reload);
+    }
 
     return (
-        <div className='product__list'>
-            <div className='product__item'>
-                <div className='product__image'>
-                    <img src='' alt='' />
-                </div>
-                <h4 className='product__title'>Sản phẩm 1</h4>
-                <p className='product__price'>500$</p>
-                <p className='product__discount'>500$</p>
-                <button>Edit</button>
-                <button>Delete</button>
-            </div>
-        </div>
+        <>  
+            <div style={{fontSize:"50px",fontWeight:"bold"}}>Product List</div>
+            <CreateProduct onReload = {handleReload}/>
+            <ProductList onReload = {handleReload} />
+        </>
     )
 }
 
